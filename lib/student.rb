@@ -19,14 +19,14 @@ class Student
         name TEXT, 
         grade TEXT
         )
-        SQL
+      SQL
     DB[:conn].execute(sql) 
   end
 
   def self.drop_table
     sql = <<-SQL
-      DROP TABLE students
-      SQL
+      DROP TABLE IF EXISTS students
+    SQL
     DB[:conn].execute(sql)
   end
   
